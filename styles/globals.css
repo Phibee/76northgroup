@@ -223,6 +223,10 @@ p {
   #capabilities .title {
     padding-right: 15px;
   }
+
+  #contacts {
+    background-position-x: 50% !important;
+  }
 }
 
 @media screen and (min-width: 1280px) {
