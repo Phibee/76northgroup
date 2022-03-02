@@ -162,8 +162,18 @@ p {
   padding-right: 15px;
 }
 
+#about,
+#capabilities, 
+#leadership{
+  padding-top: 110px;
+}
+
 @media screen and (max-width: 800px) 
 { 
+  body {
+    overflow-x: hidden;
+  }
+
   .sideNav {
     top: 0;
     left: 0;
@@ -171,12 +181,12 @@ p {
     padding: 0;
   }
 
-.sideNav ul  {
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  justify-content: unset !important;
-  margin: 0;
+  .sideNav ul  {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: unset !important;
+    margin: 0;
   }
 
   div[class*='modal_modal__'] {
@@ -203,12 +213,10 @@ p {
   .mobile-top-bar{
     z-index: 100;
   }
-}
 
-#about,
-#capabilities, 
-#leadership{
-  padding-top: 110px;
+  #capabilities .title {
+    padding-right: 15px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -223,8 +231,6 @@ p {
   #leadership {
     min-height: 800px;
   }
-
- 
 }
 
 @media screen and (min-width: 800px) {

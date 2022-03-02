@@ -25,7 +25,9 @@ const CapabilitiesSection = () => {
 						initial="hidden"
 						variants={fadeInRight}
 						className={styles.leftContent}>
-						<h1 className="text-4xl font-medium text-white">Capabilities</h1>
+						<h1 className="text-4xl font-medium text-white title">
+							Capabilities
+						</h1>
 					</motion.div>
 				</div>
 				<div
