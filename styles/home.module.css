@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  height: 70px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  justify-content: space-around;
+  background-color: white;
+  margin: 20px 0 0;
+  border-radius: 8px;
+}
+
+.navbarAnchor {
+  padding: 10px 20px;
+  display: block;
+}
+
+.home {
+  height: 100vh;
+  max-height:800px;
+  background-image: url('../assets/images/home_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
