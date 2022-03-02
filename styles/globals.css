@@ -105,7 +105,7 @@ p {
 
 .image-wrapper{
   display: inline-block;
-position: relative;
+  position: relative;
 }
 
 .image-wrapper:after {
@@ -118,7 +118,7 @@ position: relative;
   z-index: -1;
   transform-origin: right;
   background: url('../assets/images/pattern.png');
-  bottom: -5px;
+  bottom: -20%;
 }
 
 .leadership-item-wrapper img {
