@@ -214,6 +214,8 @@ p {
     z-index: 100;
   }
 
+  #leadership,
+  #about,
   #capabilities {
     overflow-x: hidden;
   }
