@@ -5,7 +5,6 @@ import React from 'react';
 import { fadeInDown, fadeInUp } from '../utils/animation';
 import useFramerScrollAnimation from '../hooks/useFramerScrollAnimation';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
-import useDisclosure from '../hooks/useDisclosure';
 
 interface INavBar {
 	brand: any;
@@ -36,7 +35,9 @@ const NavBar = ({
 				<li className="flex flex-grow">
 					<ul className="w-full flex flex-row justify-between">
 						<li className="flex flex-row justify-end md:hidden">
-							<span className="" onClick={() => afterCloseClick?.()}>
+							<span
+								className="navbar-close-btn"
+								onClick={() => afterCloseClick?.()}>
 								<IoIosCloseCircleOutline size={32} />
 							</span>
 						</li>
