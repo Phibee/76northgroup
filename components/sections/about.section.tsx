@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { fade, fadeInRight, fadeInUp } from '../../utils/animation';
 
 const AboutSection = () => {
-	const { ref } = useFramerScrollAnimation();
+	const { ref, controls } = useFramerScrollAnimation(true);
 
 	return (
 		<div
@@ -20,7 +20,7 @@ const AboutSection = () => {
 			<div className="flex flex-col md:flex-row">
 				<div className="w-full md:w-1/2">
 					<motion.div
-						animate="visible"
+						animate={controls}
 						initial="hidden"
 						variants={{
 							hidden: { ...fade.hidden },
@@ -39,7 +39,7 @@ const AboutSection = () => {
 					</motion.div>
 
 					<motion.p
-						animate="visible"
+						animate={controls}
 						initial="hidden"
 						variants={{
 							hidden: { ...fadeInUp.hidden },
@@ -61,7 +61,7 @@ const AboutSection = () => {
 					</motion.p>
 
 					<motion.h2
-						animate="visible"
+						animate={controls}
 						initial="hidden"
 						variants={{
 							hidden: { ...fadeInUp.hidden },
@@ -75,7 +75,7 @@ const AboutSection = () => {
 					</motion.h2>
 
 					<motion.p
-						animate="visible"
+						animate={controls}
 						initial="hidden"
 						variants={{
 							hidden: { ...fadeInUp.hidden },
@@ -93,9 +93,15 @@ const AboutSection = () => {
 				<div className="w-full mt-10 md:w-1/2 flex flex-row justify-center md:justify-end">
 					<div className="image-wrapper">
 						<motion.div
-							animate="visible"
+							animate={controls}
 							initial="hidden"
-							variants={fadeInRight}>
+							variants={{
+								hidden: { ...fadeInRight.hidden },
+								visible: {
+									...fadeInRight.visible,
+									transition: { duration: 0.75, delay: 0.5 },
+								},
+							}}>
 							<Image
 								src={img}
 								alt="Picture of the author"
