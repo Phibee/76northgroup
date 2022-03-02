@@ -1,5 +1,5 @@
 import Link from '../utils/activeLink';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/home.module.css';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import React from 'react';
