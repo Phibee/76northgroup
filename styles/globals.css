@@ -52,8 +52,9 @@ a:hover {
 }
 
 .sideNav {
-  position: absolute;
+  position: fixed;
   width: 100%;
+  z-index: 1000;
 }
 
 .link-item {
@@ -66,6 +67,7 @@ a:hover {
 .brand-part {
   padding-top: 20px;
   width: 40%;
+  padding-left: 10px;
 }
 
 .container-fluid {
@@ -105,10 +107,13 @@ p {
 
 .image-wrapper{
   display: inline-block;
+}
+
+.image-wrapper > div {
   position: relative;
 }
 
-.image-wrapper:after {
+.image-wrapper > div:after {
   content: '';
   height: 487px;
   width: 487px;
@@ -116,9 +121,9 @@ p {
   position: absolute;
   right: -22px;
   z-index: -1;
-  transform-origin: right;
+  transform-origin: right bottom;
   background: url('../assets/images/pattern.png');
-  bottom: -20%;
+  bottom: -20px;
 }
 
 .leadership-item-wrapper img {
@@ -144,17 +149,86 @@ p {
   align-items: center;
 }
 
+.hamburger {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  background-color: white;
+}
+
+.navbar-close-btn {
+  display:hidden;
+  padding-top: 10px;
+  padding-right: 15px;
+}
+
+@media screen and (max-width: 800px) 
+{ 
+  .sideNav {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+  }
+
+.sideNav ul  {
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: unset !important;
+  margin: 0;
+  }
+
+  div[class*='modal_modal__'] {
+    width: 100% !important;
+    overflow: auto;
+  }
+
+  .sideNav ul li.brand-part { 
+    display: none;
+  }
+
+  .menu-toggle-open {
+    display: flex;
+  }
+
+  .menu-toggle-close {
+    display: none !important;
+  }
+
+  .navbar-close-btn {
+    display:inline-block;
+  }
+
+  .mobile-top-bar{
+    z-index: 100;
+  }
+}
+
+#about,
+#capabilities, 
+#leadership{
+  padding-top: 110px;
+}
+
 @media screen and (min-width: 1280px) {
   .container-fluid {
     padding: 0 5%;
   }
-  
-}
 
-
-@media screen and (min-width: 1980px) {
-  .container-fluid {
-    padding: 0 20%;
+  #capabilities {
+    min-height: 600px;
   }
-  
+
+  #leadership {
+    min-height: 800px;
+  }
+
+ 
 }
+
+@media screen and (min-width: 800px) {
+  .hamburger{ display: none;}
+}
+
+

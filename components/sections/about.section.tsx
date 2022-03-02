@@ -13,12 +13,12 @@ const AboutSection = () => {
 		<div
 			ref={ref}
 			id="about"
-			className="container-fluid mt-4"
+			className="container-fluid mt-4 pt-40"
 			style={{ minHeight: 500 }}>
 			<SectionTitle title="About Us" subTitle="Who we are" />
 
-			<div className="flex">
-				<div className="w-1/2">
+			<div className="flex flex-col md:flex-row">
+				<div className="w-full md:w-1/2">
 					<motion.div
 						animate="visible"
 						initial="hidden"
@@ -90,7 +90,7 @@ const AboutSection = () => {
 						development.
 					</motion.p>
 				</div>
-				<div className="w-1/2 flex flex-row justify-end">
+				<div className="w-full mt-10 md:w-1/2 flex flex-row justify-center md:justify-end">
 					<div className="image-wrapper">
 						<motion.div
 							animate="visible"

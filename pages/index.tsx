@@ -10,8 +10,12 @@ import CapabilitiesSection from '../components/sections/capabilities.section';
 import LeadershipSection from '../components/sections/leadership.section';
 import ContactSection from '../components/sections/contact.section';
 import Footer from '../components/footer';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import useDisclosure from '../hooks/useDisclosure';
 
 const Home: NextPage = () => {
+	const { isOpen: isMenuOpen, onToggle: menuToggle } = useDisclosure({});
+
 	return (
 		<>
 			<Head>
@@ -21,11 +25,33 @@ const Home: NextPage = () => {
 					href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700&display=swap"
 					rel="stylesheet"
 				/>
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1.0"></meta>
 			</Head>
+
+			<div className="mobile-top-bar flex flex-row py-3 align-middle fixed drop-shadow-xl bg-white w-full md:hidden">
+				<div className="flex-grow ml-2">
+					<Image
+						src={srcImg}
+						alt="Picture of the author"
+						width="140px"
+						height="30px"
+					/>
+				</div>
+				<div className="flex-shrink">
+					<span className="hamburger" onClick={() => menuToggle()}>
+						<GiHamburgerMenu size={32} />
+					</span>
+				</div>
+			</div>
 
 			<div className={styles.container}>
 				<div className="sideNav container-fluid">
 					<NavBar
+						isOpen={isMenuOpen}
+						afterItemClick={() => menuToggle()}
+						afterCloseClick={() => menuToggle()}
 						brand={
 							<Image
 								src={srcImg}
@@ -41,8 +67,8 @@ const Home: NextPage = () => {
 				<AboutSection />
 				<CapabilitiesSection />
 				<LeadershipSection />
-        <ContactSection />
-        
+				<ContactSection />
+
 				<Footer />
 			</div>
 		</>

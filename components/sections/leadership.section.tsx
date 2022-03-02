@@ -37,7 +37,9 @@ const LeadershipSection = () => {
 	const listItems = React.useMemo(
 		() =>
 			Object.values(leadershipData).map((value: any) => (
-				<motion.div variants={item} className="px-4 leadership-item-wrapper">
+				<motion.div
+					variants={item}
+					className="px-4 leadership-item-wrapper mb-10">
 					<Image
 						onClick={() => handleItemClick(value)}
 						src={value.image}
@@ -54,30 +56,26 @@ const LeadershipSection = () => {
 					<div className="text-center">{value.company}</div>
 				</motion.div>
 			)),
-		[setModalData, dialogueOpenToggle]
+		[setModalData, dialogueOpenToggle, controls, ref]
 	);
 
 	return (
-		<div
-			ref={ref}
-			id="leadership"
-			className={'container-fluid mb-20'}
-			style={{ height: 800 }}>
-			<h1 className="font-semibold text-5xl text-center mt-20 mb-12">
+		<div ref={ref} id="leadership" className={'container-fluid mb-20'}>
+			<h1 className="font-semibold text-5xl text-center mt-5 md:mt-10 mb-12">
 				Leadership
 			</h1>
 			<motion.div
 				variants={container}
 				initial="hidden"
 				animate={controls}
-				className="grid grid-cols-3">
+				className="grid md:grid-cols-3">
 				{listItems}
 			</motion.div>
 
 			<Modal
 				isOpen={isModalOpen}
 				onCloseButtonClick={() => dialogueOpenToggle()}>
-				<div className="flex flex-row">
+				<div className="flex flex-col md:flex-row">
 					<div>
 						<Image
 							src={modalData?.image}
@@ -86,7 +84,7 @@ const LeadershipSection = () => {
 							height="270px"
 						/>
 					</div>
-					<div className="pl-8 flex flex-col justify-center">
+					<div className="md:pl-8 flex flex-col justify-center">
 						<div className="text-white my-2 text-xl font-semibold">
 							{modalData?.name}
 						</div>
@@ -102,4 +100,4 @@ const LeadershipSection = () => {
 	);
 };
 
-export default LeadershipSection;
+export default React.memo(LeadershipSection);

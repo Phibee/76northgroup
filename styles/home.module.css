@@ -9,9 +9,8 @@
   display: flex;
   flex-direction: row;
   padding: 0;
-  justify-content: space-around;
   background-color: white;
-  margin: 20px 0 0;
+  margin: 20px 0 20px;
   border-radius: 8px;
 }
 
@@ -26,5 +25,6 @@
   background-image: url('../assets/images/home_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center top;
 }
 

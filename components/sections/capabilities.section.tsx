@@ -17,9 +17,9 @@ const CapabilitiesSection = () => {
 	const { ref, controls } = useFramerScrollAnimation(true);
 
 	return (
-		<div id="capabilities" ref={ref} style={{ height: 600, paddingTop: '5%' }}>
-			<div className="flex flex-row w-full h-full">
-				<div className={`w-1/4 ${styles.leftContainer}`}>
+		<div id="capabilities" ref={ref}>
+			<div className="flex flex-row flex-wrap w-full md:h-full">
+				<div className={`w-full md:w-1/4 ${styles.leftContainer}`}>
 					<motion.div
 						animate={controls}
 						initial="hidden"
@@ -28,8 +28,9 @@ const CapabilitiesSection = () => {
 						<h1 className="text-4xl font-medium text-white">Capabilities</h1>
 					</motion.div>
 				</div>
-				<div className={`w-3/4 pl-32 pt-20 px-12 py-12 ${styles.rightContent}`}>
-					<div className="grid grid-cols-2">
+				<div
+					className={`w-full md:w-3/4 md:pl-32 pt-20 px-12 py-12 ${styles.rightContent}`}>
+					<div className="grid md:grid-cols-2">
 						<div className="mb-12">
 							<motion.div
 								initial="hidden"
