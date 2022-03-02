@@ -214,6 +214,10 @@ p {
     z-index: 100;
   }
 
+  #capabilities {
+    overflow-x: hidden;
+  }
+
   #capabilities .title {
     padding-right: 15px;
   }
