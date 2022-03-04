@@ -227,6 +227,10 @@ p {
   #contacts {
     background-position-x: 50% !important;
   }
+
+  .navbar-wrapper {
+    height: 100vh;
+  }
 }
 
 @media screen and (min-width: 1280px) {

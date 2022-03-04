@@ -23,8 +23,9 @@ const NavBar = ({
 
 	return (
 		<div
-			style={{ height: '100vh' }}
-			className={isOpen ? 'menu-toggle-open' : 'menu-toggle-close'}>
+			className={`navbar-wrapper ${
+				isOpen ? 'menu-toggle-open' : 'menu-toggle-close'
+			}`}>
 			<motion.ul
 				ref={ref}
 				animate={controls}
